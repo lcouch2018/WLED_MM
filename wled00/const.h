@@ -382,7 +382,7 @@
 #ifdef ESP8266
 #define SETTINGS_STACK_BUF_SIZE 2048
 #else
-#define SETTINGS_STACK_BUF_SIZE 3712   // WLEDMM added 512 bytes of margin (was 3096)
+#define SETTINGS_STACK_BUF_SIZE 3776   // WLEDMM added 680 bytes of margin (was 3096) for audioreactive UI
 #endif
 
 #ifdef WLED_USE_ETHERNET
@@ -424,7 +424,7 @@
   #if defined(ARDUINO_ARCH_ESP32S2) || defined(ARDUINO_ARCH_ESP32C3)
   #define JSON_BUFFER_SIZE 48000 // WLEDMM
   #else
-  #define JSON_BUFFER_SIZE 60000 // WLEDMM
+  #define JSON_BUFFER_SIZE 56000 // WLEDMM (was 60000) slightly reduced to avoid build error "region dram0_0_seg overflowed"
   #endif
  #else
   #define JSON_BUFFER_SIZE 24576
